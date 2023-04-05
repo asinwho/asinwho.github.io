@@ -13,15 +13,15 @@ function followCursor(event) {
  container.style.setProperty('--x', xNormalized + 'px');
  container.style.setProperty('--y', yNormalized + 'px');
 }
-
+//add limitation where pupil is moving
 document.addEventListener('mousemove', followCursor);
 
 let container1 = document.getElementById('container');
 let text = document.getElementById('text');
-let newText = 'be not afraid be not afraid be not afraid be not afraid be not afraid be not afraid';
-
+let newText = 'be not afraid  be not afraid  be not afraid  be not afraid  be not afraid  be not afraid';
+//think of a way to detect a page limit
 function addText() {
- newText = ' ' + newText;
+ newText = '  ' + newText;
  text.innerText += newText;
 }
 
