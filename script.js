@@ -1,28 +1,35 @@
-let container = document.getElementById('container');
-let reptText = document.getElementById('repeating-text');
-let eyeContainer = document.getElementById('eye-container');
-let pupil = document.getElementById('pupil');
+const words=['be not afraid','be not','be afraid', 'afraid']
+let fr = 2;
+let shY=0;
+let count =0;
+let y = windowHeight;
 
-function followCursor(event) {
- let x = event.clientX;
- let y = event.clientY;
- let centerHor = window.innerWidth / 2;
- let centerVert = window.innerHeight / 2;
- let xNormalized = (x - centerHor) * 3;
- let yNormalized = (y - centerVert) * 3;
- container.style.setProperty('--x', xNormalized + 'px');
- container.style.setProperty('--y', yNormalized + 'px');
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  //textFont(inconsolata);
+  textAlign(CENTER);
+  textSize(16);
+  frameRate(fr);
+
 }
-//add limitation where pupil is moving
-document.addEventListener('mousemove', followCursor);
-
-let container1 = document.getElementById('container');
-let text = document.getElementById('text');
-let newText = 'be not afraid  be not afraid  be not afraid  be not afraid  be not afraid  be not afraid';
-//think of a way to detect a page limit
-function addText() {
- newText = '  ' + newText;
- text.innerText += newText;
+function getString(){
+    let string=' ';
+    let i;
+    for (let i = 0; i < 20; i++) 
+    {
+        let word = random(words); // select random word;
+        string= string + ' '+ word;
+    }
+    return string
 }
-
-setInterval(addText, 1000);
+function draw() {
+    //background('rgb(0, 128, 0)')
+    background('#222222');
+    strokeWeight(10);
+    let c = color(0, 128, 0);
+    fill(c);
+    for (let i=0;i<windowHeight;i+=16)
+    {
+        text(getString(), 0, i, windowWidth, windowHeight );
+    }
+}
