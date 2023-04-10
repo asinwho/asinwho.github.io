@@ -1,5 +1,5 @@
 const words=['be not afraid','be not','be afraid', 'afraid']
-let fr = 2;
+let fr = 4;
 let shY=0;
 let count =0;
 let y = windowHeight;
