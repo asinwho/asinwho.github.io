@@ -1,6 +1,5 @@
 # beNotAfraid
-
-hebephoh.github.io
+<a href="https://hebephoh.github.io/">hebephoh.github.io</a>
 
 a project in process of a canonical angel with words cascading in a waterfall
 
